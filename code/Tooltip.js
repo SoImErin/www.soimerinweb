@@ -9,6 +9,7 @@ function waitForTooltipAndInit() {
     document.body.addEventListener("mouseover", (e) => {
         const target = e.target.closest("[tooltip]");
         if (target) {
+            console.log("Tooltip target found:", target);
             tooltip.textContent = target.getAttribute("tooltip");
             tooltip.style.opacity = "1";
         }
@@ -17,8 +18,8 @@ function waitForTooltipAndInit() {
     document.body.addEventListener("mousemove", (e) => {
         const target = e.target.closest("[tooltip]");
         if (target) {
-            tooltip.style.left = `${e.pageX}px`;
-            tooltip.style.top = `${e.pageY - 10}px`;
+            tooltip.style.left = `${e.pageX + 20}px`;   // 20px to the right
+            tooltip.style.top = `${e.pageY - 30}px`;    // 30px above
         }
     });
 
