@@ -16,16 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
             let left = e.clientX;
             let top = e.clientY - 20;
 
-            // Prevent tooltip from going off the right edge
-            if (left + tooltipRect.width > window.innerWidth) {
-                left = e.clientX - tooltipRect.width - offset;
-            }
-
-            // Prevent tooltip from going off the bottom edge
-            if (top + tooltipRect.height > window.innerHeight) {
-                top = e.clientY - tooltipRect.height - offset;
-            }
-
             tooltip.style.left = `${left}px`;
             tooltip.style.top = `${top}px`;
         };
