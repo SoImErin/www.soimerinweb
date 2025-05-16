@@ -1,33 +1,42 @@
-function waitForTooltipAndInit() {
+document.addEventListener("DOMContentLoaded", () => {
     const tooltip = document.querySelector(".custom-tooltip");
-
-    if (!tooltip) {
-        requestAnimationFrame(waitForTooltipAndInit);
-        return;
-    }
 
     document.body.addEventListener("mouseover", (e) => {
         const target = e.target.closest("[tooltip]");
-        if (target) {
-            console.log("Tooltip target found:", target);
-            tooltip.textContent = target.getAttribute("tooltip");
-            tooltip.style.opacity = "1";
-        }
-    });
+        if (!target) return;
 
-    document.body.addEventListener("mousemove", (e) => {
-        const target = e.target.closest("[tooltip]");
-        if (target) {
-            tooltip.style.left = `${e.pageX + 20}px`;   // 20px to the right
-            tooltip.style.top = `${e.pageY - 30}px`;    // 30px above
-        }
-    });
+        const text = target.getAttribute("tooltip");
+        if (!text) return;
 
-    document.body.addEventListener("mouseout", (e) => {
-        if (e.target.closest("[tooltip]")) {
+        tooltip.textContent = text;
+        tooltip.style.opacity = "1";
+
+        const moveHandler = (e) => {
+            const tooltipRect = tooltip.getBoundingClientRect();
+            let left = e.clientX;
+            let top = e.clientY - 20;
+
+            // Prevent tooltip from going off the right edge
+            if (left + tooltipRect.width > window.innerWidth) {
+                left = e.clientX - tooltipRect.width - offset;
+            }
+
+            // Prevent tooltip from going off the bottom edge
+            if (top + tooltipRect.height > window.innerHeight) {
+                top = e.clientY - tooltipRect.height - offset;
+            }
+
+            tooltip.style.left = `${left}px`;
+            tooltip.style.top = `${top}px`;
+        };
+
+        const leaveHandler = () => {
             tooltip.style.opacity = "0";
-        }
-    });
-}
+            document.removeEventListener("mousemove", moveHandler);
+            target.removeEventListener("mouseleave", leaveHandler);
+        };
 
-document.addEventListener("DOMContentLoaded", waitForTooltipAndInit);
+        document.addEventListener("mousemove", moveHandler);
+        target.addEventListener("mouseleave", leaveHandler);
+    });
+});
