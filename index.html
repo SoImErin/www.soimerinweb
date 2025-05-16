@@ -1,32 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html class="dark">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>So I'm Erin Web</title>
         <meta name="Web Development Portfolio" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="style/style.css">
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+        <script src="code/Tooltip.js" async defer></script>
     </head>
     <body>
-        <header>
-            <h1>So I'm Erin</h1>
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Hi, I'm Erin! I'm a web developer with a passion for creating beautiful and functional websites.</p>
-            <p>I have experience in HTML, CSS, JavaScript, and various frameworks.</p>
-            <p>In my free time, I enjoy learning new technologies and working on personal projects.</p>
-        </section>
-        
-        
-        <script src="" async defer></script>
+        <div class="custom-tooltip" style="opacity: 0;"></div>
+
+        <div class="body__container">
+
+            <div class="background">
+                <img src="media/backgrounds/dioandnivis.png" alt="">
+            </div>
+
+            <div class="heading panel background-primary">
+                <div class="heading__container">
+                    <img src="media/heading/PFP.png" alt="" class="heading_portrait">
+                    <div class="heading_details">
+                        <h1 class="heading__name text-primary">So, I'm Erin.. and I love</h1>
+                        <p class="heading__description text-primary">Making things that just make <span>sense</span>✨</p>
+                        <h1 class="heading__subdescription text-primary">With the help of my cat, <a target="_blank" href="https://www.instagram.com/so_imninja/">Ninja</a></h1>
+                        <h2 class="heading__title text-primary">Front End Web Developer</h2>
+
+                        
+                        <div class="trained-tools__container">
+                            <div class="trained-tools__item" tooltip="HTML5">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+                                    <path fill="#E65100" d="M41,5H7l3,34l14,4l14-4L41,5L41,5z"></path><path fill="#FF6D00" d="M24 8L24 39.9 35.2 36.7 37.7 8z"></path><path fill="#FFF" d="M24,25v-4h8.6l-0.7,11.5L24,35.1v-4.2l4.1-1.4l0.3-4.5H24z M32.9,17l0.3-4H24v4H32.9z"></path><path fill="#EEE" d="M24,30.9v4.2l-7.9-2.6L15.7,27h4l0.2,2.5L24,30.9z M19.1,17H24v-4h-9.1l0.7,12H24v-4h-4.6L19.1,17z"></path>
+                                    </svg>
+                            </div>
+                            <div class="trained-tools__item" tooltip="CSS3">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+                                    <path fill="#0277BD" d="M41,5H7l3,34l14,4l14-4L41,5L41,5z"></path><path fill="#039BE5" d="M24 8L24 39.9 35.2 36.7 37.7 8z"></path><path fill="#FFF" d="M33.1 13L24 13 24 17 28.9 17 28.6 21 24 21 24 25 28.4 25 28.1 29.5 24 30.9 24 35.1 31.9 32.5 32.6 21 32.6 21z"></path><path fill="#EEE" d="M24,13v4h-8.9l-0.3-4H24z M19.4,21l0.2,4H24v-4H19.4z M19.8,27h-4l0.3,5.5l7.9,2.6v-4.2l-4.1-1.4L19.8,27z"></path>
+                                    </svg>
+                            </div>
+                            <div class="trained-tools__item" tooltip="Unity Engine">
+                                <img src="media/logos/unity-logo.webp" alt="">
+                            </div>
+                            <a class="trained-tools__item" tooltip="Github" target="_blank" href="https://github.com/SoImErin">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
+                                    <g fill="#7f38a1" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M10.9,2.1c-4.6,0.5 -8.3,4.2 -8.8,8.7c-0.5,4.7 2.2,8.9 6.3,10.5c0.3,0.1 0.6,-0.1 0.6,-0.5v-1.6c0,0 -0.4,0.1 -0.9,0.1c-1.4,0 -2,-1.2 -2.1,-1.9c-0.1,-0.4 -0.3,-0.7 -0.6,-1c-0.3,-0.1 -0.4,-0.1 -0.4,-0.2c0,-0.2 0.3,-0.2 0.4,-0.2c0.6,0 1.1,0.7 1.3,1c0.5,0.8 1.1,1 1.4,1c0.4,0 0.7,-0.1 0.9,-0.2c0.1,-0.7 0.4,-1.4 1,-1.8c-2.3,-0.5 -4,-1.8 -4,-4c0,-1.1 0.5,-2.2 1.2,-3c-0.1,-0.2 -0.2,-0.7 -0.2,-1.4c0,-0.4 0,-1 0.3,-1.6c0,0 1.4,0 2.8,1.3c0.5,-0.2 1.2,-0.3 1.9,-0.3c0.7,0 1.4,0.1 2,0.3c1.3,-1.3 2.8,-1.3 2.8,-1.3c0.2,0.6 0.2,1.2 0.2,1.6c0,0.8 -0.1,1.2 -0.2,1.4c0.7,0.8 1.2,1.8 1.2,3c0,2.2 -1.7,3.5 -4,4c0.6,0.5 1,1.4 1,2.3v2.6c0,0.3 0.3,0.6 0.7,0.5c3.7,-1.5 6.3,-5.1 6.3,-9.3c0,-6 -5.1,-10.7 -11.1,-10z"></path></g></g>
+                                    </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <button id="toggle-theme" class="toggle-theme-btn">
+                        <svg class="theme-toggle-img dark-mode-theme-toggle-img" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="M16 26c-5.514 0-10-4.486-10-10S10.486 6 16 6s10 4.486 10 10-4.486 10-10 10zm0-18c-4.411 0-8 3.589-8 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8zM15 0h2v4h-2zM3.98 5.394l1.414-1.415 2.828 2.829-1.414 1.414zM0 15h4v2H0zM3.98 26.606l2.828-2.828 1.414 1.414-2.828 2.829zM15 28h2v4h-2zM23.779 25.192l1.414-1.414 2.828 2.829-1.414 1.414zM28 15h4v2h-4zM23.779 6.808l2.828-2.829 1.414 1.415-2.828 2.828z" fill="#ffffff" class="fill-000000"></path></svg>
+                        <?xml version="1.0" ?><svg viewBox="0 0 256 256" class="theme-toggle-img light-mode-theme-toggle-img" xmlns="http://www.w3.org/2000/svg"><rect fill="none" height="256" width="256"/><path d="M216.7,152.6A91.9,91.9,0,0,1,103.4,39.3h0A92,92,0,1,0,216.7,152.6Z" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="contentroot">
+                <div class="content panel background-primary">
+                    <div class="content__container">
+                        <!-- <p class="text-primary">test</p> -->
+                    </div>
+                </div>
+                <div class="sidebar panel background-primary">
+                    <div class="sidebar__container">
+                        <!-- <p class="text-primary">test</p> -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="footer">
+            <div class="social">
+                <a class="text-primary" href="https://discord.gg/FwVdmSMZ8f"><i class='bx bxl-discord' ></i></a>
+                <a class="text-primary" href="https://store.steampowered.com/search/?developer=LootGame%20Studios%20LTD"><i class='bx bxl-steam' ></i></a>
+                <a class="text-primary" href="https://github.com/SoImErin"><i class='bx bxl-github' ></i></a>
+                <a class="text-primary" href="https://www.linkedin.com/in/erin-boundy-10071a250/"><i class="bx bxl-linkedin-square"></i></a>
+                <a class="text-primary" href="https://www.instagram.com/so_imerin/"><i class='bx bxl-instagram' ></i></a>
+            </div>
+
+            <ul class="list">
+                <!-- <li>
+                    <a href="#">FAQ</a>
+                </li> -->
+                <!-- <li>
+                    <a href="#about-me" class="text-primary">About Me</a>
+                </li> -->
+                <!-- <li>
+                    <a href="#contact-me">Contact</a>
+                </li> -->
+                <li class="footer-download-cv">
+                    <a href="files/CV-censored.pdf" target="_blank" class="download-cv text-primary">Download CV</a>
+                </li>
+                <li class="footer-download-cv-mobile">
+                    <a href="files/CV-censored.pdf" target="_blank" class="download-cv download-cv-mobile text-primary">Download CV</a>
+                </li>
+            </ul>
+
+            <p class="copyright text-primary">© 2025 Erin S. V. Boundy | All Rights Reserved</p>
+        </footer>
+            
+        <script src="code/ThemeToggleButton.js" async defer></script>
     </body>
 </html>
