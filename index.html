@@ -7,19 +7,25 @@
         <meta name="Web Development Portfolio" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style/style.css">
+        <script src="code/RandomBackground.js" defer></script>
         <script src="code/Tooltip.js" defer></script>
         <link rel="rel" href="media/icon.png">
     </head>
     <body>
         <div class="custom-tooltip" style="opacity: 0;"></div>
 
+        <div class="background">
+            <img id="background-dark-img" class="darkmode-only" src="media/backgrounds/empty-dark.png" alt="">
+            <img id="background-light-img" class="lightmode-only" src="media/backgrounds/empty-light.png" alt="">
+        </div>
+
         <div class="body__container">
 
-            <div class="background">
-                <img src="media/backgrounds/dioandnivis.png" alt="">
-            </div>
-
             <div class="heading panel background-primary">
+                    <button id="toggle-theme" class="toggle-theme-btn mediumscreen-only">
+                        <svg class="theme-toggle-img darkmode-only" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="M16 26c-5.514 0-10-4.486-10-10S10.486 6 16 6s10 4.486 10 10-4.486 10-10 10zm0-18c-4.411 0-8 3.589-8 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8zM15 0h2v4h-2zM3.98 5.394l1.414-1.415 2.828 2.829-1.414 1.414zM0 15h4v2H0zM3.98 26.606l2.828-2.828 1.414 1.414-2.828 2.829zM15 28h2v4h-2zM23.779 25.192l1.414-1.414 2.828 2.829-1.414 1.414zM28 15h4v2h-4zM23.779 6.808l2.828-2.829 1.414 1.415-2.828 2.828z" fill="#ffffff" class="fill-000000"></path></svg>
+                        <?xml version="1.0" ?><svg viewBox="0 0 256 256" class="theme-toggle-img lightmode-only" xmlns="http://www.w3.org/2000/svg"><rect fill="none" height="256" width="256"/><path d="M216.7,152.6A91.9,91.9,0,0,1,103.4,39.3h0A92,92,0,1,0,216.7,152.6Z" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                    </button>
                 <div class="heading__container">
                     <img src="media/heading/PFP.png" alt="" class="heading_portrait">
                     <div class="heading_details">
@@ -50,9 +56,9 @@
                             </div>
                         </div>
                     </div>
-                    <button id="toggle-theme" class="toggle-theme-btn">
-                        <svg class="theme-toggle-img dark-mode-theme-toggle-img" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="M16 26c-5.514 0-10-4.486-10-10S10.486 6 16 6s10 4.486 10 10-4.486 10-10 10zm0-18c-4.411 0-8 3.589-8 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8zM15 0h2v4h-2zM3.98 5.394l1.414-1.415 2.828 2.829-1.414 1.414zM0 15h4v2H0zM3.98 26.606l2.828-2.828 1.414 1.414-2.828 2.829zM15 28h2v4h-2zM23.779 25.192l1.414-1.414 2.828 2.829-1.414 1.414zM28 15h4v2h-4zM23.779 6.808l2.828-2.829 1.414 1.415-2.828 2.828z" fill="#ffffff" class="fill-000000"></path></svg>
-                        <?xml version="1.0" ?><svg viewBox="0 0 256 256" class="theme-toggle-img light-mode-theme-toggle-img" xmlns="http://www.w3.org/2000/svg"><rect fill="none" height="256" width="256"/><path d="M216.7,152.6A91.9,91.9,0,0,1,103.4,39.3h0A92,92,0,1,0,216.7,152.6Z" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                    <button id="toggle-theme" class="toggle-theme-btn widescreen-only">
+                        <svg class="theme-toggle-img darkmode-only" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="M16 26c-5.514 0-10-4.486-10-10S10.486 6 16 6s10 4.486 10 10-4.486 10-10 10zm0-18c-4.411 0-8 3.589-8 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8zM15 0h2v4h-2zM3.98 5.394l1.414-1.415 2.828 2.829-1.414 1.414zM0 15h4v2H0zM3.98 26.606l2.828-2.828 1.414 1.414-2.828 2.829zM15 28h2v4h-2zM23.779 25.192l1.414-1.414 2.828 2.829-1.414 1.414zM28 15h4v2h-4zM23.779 6.808l2.828-2.829 1.414 1.415-2.828 2.828z" fill="#ffffff" class="fill-000000"></path></svg>
+                        <?xml version="1.0" ?><svg viewBox="0 0 256 256" class="theme-toggle-img lightmode-only" xmlns="http://www.w3.org/2000/svg"><rect fill="none" height="256" width="256"/><path d="M216.7,152.6A91.9,91.9,0,0,1,103.4,39.3h0A92,92,0,1,0,216.7,152.6Z" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
                     </button>
                 </div>
             </div>
