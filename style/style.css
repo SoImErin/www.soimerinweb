@@ -319,7 +319,12 @@ body {
 
 
 
-@media screen and (max-width: 1300px) {
+
+
+
+
+
+@media (max-width: 1300px) {
 
     .widescreen-only {
         display: none;
