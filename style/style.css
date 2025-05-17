@@ -138,7 +138,7 @@ body {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 1px var(--color-text-primary);
+    -webkit-text-stroke: .5px var(--color-text-primary);
     text-decoration: none;
 }
 
