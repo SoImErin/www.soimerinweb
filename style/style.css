@@ -161,6 +161,10 @@ body {
     text-decoration: none;
 }
 
+.heading__subdescription a:hover {
+    text-decoration: underline;
+}
+
 .contentroot {
     margin-top: 20px;
     display: flex;
@@ -195,6 +199,12 @@ body {
 .trained-tools__item {
     width: 30px;
     height: 30px;
+    transition: transform 0.2s ease;
+}
+
+.trained-tools__item:hover {
+    transform: scale(1.2);
+    transition: transform 0.2s ease;
 }
 
 .trained-tools__item svg {
