@@ -411,10 +411,23 @@ body {
         visibility: hidden;
     }
 
+    .heading__container.scroll-at-top .heading_portrait {
+        height: 50vh;
+        width: 90vw;
+        transition: all 1s ease;
+        margin: auto;
+    }
+
+    .heading__container .heading_portrait {
+        height: 17rem;
+        width: 17rem;
+        transition: all 1s ease;
+    }
+
     .heading__container.scroll-at-top {
         /* scale: 150%; */
-        transform: scale(1.5);
-        margin-top: 300px;
+        /* transform: scale(1.5); */
+        /* margin-top: 300px; */
         transition: all 1s ease;
     }
 
@@ -455,8 +468,12 @@ body {
 
     .body__container {
         width: 100%;
-        padding-top: 50px;
+        padding-top: 150px;
         padding-bottom: 0px;
+    }
+
+    .heading {
+        padding: 0;
     }
 
     .heading__container {
