@@ -13,6 +13,7 @@
         <script src="code/RandomBackground.js" defer></script>
         <script src="code/NavigationButtons.js" defer></script>
         <script src="code/AnimateLandingMobile.js" defer></script>
+        <script src="code/ProjectCard.js" defer></script>
 
         <link rel="icon" href="media/icon.png">
     </head>
@@ -29,7 +30,7 @@
             <?xml version="1.0" ?><svg viewBox="0 0 256 256" class="theme-toggle-img lightmode-only" xmlns="http://www.w3.org/2000/svg"><rect fill="none" height="256" width="256"/><path d="M216.7,152.6A91.9,91.9,0,0,1,103.4,39.3h0A92,92,0,1,0,216.7,152.6Z" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
         </button>
 
-        <div class="body__container scroll-at-top">
+        <div class="body__container">
 
             <div class="heading panel background-primary">
                 <div class="heading__container">
@@ -85,24 +86,58 @@
                 <div class="content panel background-primary">
                     <div class="content__container">
                         <!-- <p class="text-primary">test</p> -->
-                         <div class="home__content content-section">
-                            <p class="text-primary">Welcome to my portfolio! I am a Front End Web Developer with a passion for creating engaging and user-friendly web applications. My goal is to make the web a better place, one line of code at a time.</p>
-                         </div>
-                         <div class="aboutme__content content-section">
+                         <section class="home__content content-section">
+                            <div class="projects-list" style="padding: 20px; background-color: var(--color-base-alt);">
+                                <h1 class="text-primary" style="margin: 0;">Featured Projects</h1>
+                                <project-card data-location="data/projects.json" id="sneezeman"></project-card>
+                                <project-card data-location="data/projects.json" id="detective-badgers"></project-card>
+                                <!-- <li class="project-card panel background-primary">
+                                    <div class="project-card__media">
+                                        <video muted="" loop="" autoplay="" preload="metadata" src="media/projects/detbadg/background.mp4"></video>
+                                    </div>
+                                    <div class="project-card__details">
+                                        <div class="project-card__details__header">
+                                            <h2 class="text-primary">The Adventures of Detective Badgers (2018)</h2>
+                                            <p class="text-primary">Lead Programmer</p>
+                                        </div>
+                                    </div>
+                                </li> -->
+                            </div>
+                        </section>
+                         <section class="aboutme__content content-section">
                             <p class="text-primary">I am a passionate Front End Web Developer with a love for creating engaging and user-friendly web applications. I have experience in HTML, CSS, JavaScript, and various front-end frameworks. My goal is to make the web a better place, one line of code at a time.</p>
-                         </div>
-                         <div class="projects__content content-section">
-                            <p class="text-primary">Here are some of my projects:</p>
-                         </div>
-                         <div class="experience__content content-section">
+                         </section>
+                         <section class="projects__content content-section">
+                            <div class="projects-list">
+                                <project-card data-location="data/projects.json" id="sneezeman"></project-card>
+                                <project-card data-location="data/projects.json" id="crash-it-up"></project-card>
+                                <project-card data-location="data/projects.json" id="dio-and-nivis"></project-card>
+                                <project-card data-location="data/projects.json" id="pkt-survivor"></project-card>
+                                <project-card data-location="data/projects.json" id="minesweeper-ai"></project-card>
+                                <project-card data-location="data/projects.json" id="insannatus"></project-card>
+                                <project-card data-location="data/projects.json" id="detective-badgers"></project-card>
+                                <!-- <li class="project-card panel background-primary">
+                                    <div class="project-card__media">
+                                        <video muted="" loop="" autoplay="" preload="metadata" src="media/projects/detbadg/background.mp4"></video>
+                                    </div>
+                                    <div class="project-card__details">
+                                        <div class="project-card__details__header">
+                                            <h2 class="text-primary">The Adventures of Detective Badgers (2018)</h2>
+                                            <p class="text-primary">Lead Programmer</p>
+                                        </div>
+                                    </div>
+                                </li> -->
+                            </div>
+                         </section>
+                         <section class="experience__content content-section">
                             <p class="text-primary">I have experience working with various front-end technologies, including HTML, CSS, JavaScript, and React. I have also worked on several projects that involved building responsive and user-friendly web applications.</p>
-                         </div>
-                         <div class="education__content content-section">
+                         </section>
+                         <section class="education__content content-section">
                             <p class="text-primary">I have a degree in Game Development with a Specialism in Programming which I earned studying at Falmouth University. During my studies, I gained a solid foundation in programming, web development, and software engineering principles.</p>
-                         </div>
-                         <div class="contactme__content content-section">
+                         </section>
+                         <section class="contactme__content content-section">
                             <p class="text-primary">If you would like to get in touch with me, please feel free to reach out via email or connect with me on LinkedIn. I am always open to new opportunities and collaborations!</p>
-                         </div>
+                         </section>
                     </div>
                 </div>
                 <div class="sidebar panel background-primary">
@@ -110,7 +145,7 @@
                         <ul class="navigation">
                             <li><button class="background-primary text-primary nav-btn" data-target=".home__content">Home</button></li>
                             <li><button class="background-primary text-primary nav-btn" data-target=".aboutme__content">About me</button></li>
-                            <li><button class="background-primary text-primary nav-btn" data-target=".projects__content">Projects <span>(# of projects)</span></button></li>
+                            <li><button class="background-primary text-primary nav-btn" data-target=".projects__content">Projects <span>(7)</span></button></li>
                             <li><button class="background-primary text-primary nav-btn" data-target=".experience__content">Experience</button></li>
                             <li><button class="background-primary text-primary nav-btn" data-target=".education__content">Education</button></li>
                             <li><button class="background-primary text-primary nav-btn" data-target=".contactme__content">Contact me</button></li>
