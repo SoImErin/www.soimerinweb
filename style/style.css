@@ -424,7 +424,8 @@ body {
     }
 
     .body__container.scroll-at-top {
-        height: 100vh;
+        height: 95vh;
+        margin-bottom: 5vh;
         /* justify-content: center; */
 
         /* make top padding equal to half of the y size of contentroot */
