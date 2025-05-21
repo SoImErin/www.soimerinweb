@@ -404,18 +404,17 @@ body {
 
 @media (max-width: 1300px) {
 
-    .contentroot.scroll-at-top {
+    .body__container.scroll-at-top .contentroot {
         opacity: 0;
-        transform: translateY(10px);
-        transition: all 1s ease;
         visibility: hidden;
+        max-height: 0px;
+        transition: max-height 1s ease;
     }
 
-    .heading__container.scroll-at-top .heading_portrait {
-        height: 50vh;
+    .body__container.scroll-at-top .heading_portrait {
+        height: 90vw;
         width: 90vw;
         transition: all 1s ease;
-        margin: auto;
     }
 
     .heading__container .heading_portrait {
@@ -424,10 +423,13 @@ body {
         transition: all 1s ease;
     }
 
-    .heading__container.scroll-at-top {
-        /* scale: 150%; */
-        /* transform: scale(1.5); */
-        /* margin-top: 300px; */
+    .body__container.scroll-at-top {
+        height: 100vh;
+        /* justify-content: center; */
+
+        /* make top padding equal to half of the y size of contentroot */
+
+        /* padding-top: 0px; */
         transition: all 1s ease;
     }
 
@@ -438,8 +440,8 @@ body {
     .contentroot {
         flex-direction: column-reverse;
         align-items: stretch;
-        transition: all 1s ease;
         gap: 0px;
+        transition: all 1s ease;
     }
 
     .navigation li button {
@@ -468,12 +470,17 @@ body {
 
     .body__container {
         width: 100%;
-        padding-top: 150px;
+        padding-top: 0px;
         padding-bottom: 0px;
+        transition: all 1s ease;
+        justify-content: center;
     }
 
     .heading {
+        /* margin: auto 0; */
+        margin-top: 100px;
         padding: 0;
+        /* transition: all 1s ease; */
     }
 
     .heading__container {
