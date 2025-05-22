@@ -233,37 +233,6 @@ a.ninja-link:hover {
     visibility: visible;
 }
 
-.project-card__media {
-    width: 210px;
-    height: 130px;
-    border-radius: 10px;
-    overflow: hidden;
-    flex-shrink: 0;
-    margin-right: 20px;
-}
-
-.project-card__media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.project-card__media video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.project-card__details__header h2 {
-    margin: 0;
-    /* font-size: 1.5rem; */
-}
-
-.project-card__details__header p {
-    margin: 0;
-    margin-top: 5px;
-}
-
 .navigation {
     list-style: none;
     padding: 0;
@@ -390,6 +359,22 @@ a.ninja-link:hover {
 
 
 
+
+.home__content div {
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 .aboutme__highlight-role {
     color: var(--highlight-color);
     font-weight: bold;
@@ -399,6 +384,25 @@ a.ninja-link:hover {
     color: var(--highlight-color);
     font-weight: bold;
 }
+
+
+
+
+
+
+
+
+
+
+
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+
 
 
 

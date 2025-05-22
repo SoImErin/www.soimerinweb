@@ -14,6 +14,7 @@
         <script src="code/NavigationButtons.js" defer></script>
         <script src="code/Mobile/AnimateLandingMobile.js" defer></script>
         <script src="code/ProjectCard.js" defer></script>
+        <script src="code/ExperienceCard.js" defer></script>
 
         <script src="code/PaginatedProjectList.js" defer></script>
 
@@ -93,6 +94,11 @@
                                 <project-card data-location="data/projects.json" id="detective-badgers"></project-card>
                                 
                             </div>
+                            <div class="experience-list" style="padding: 20px; margin: 0; background-color: var(--color-base-alt);">
+                                <h1 class="text-primary" style="margin: 0;">Featured Experience</h1>
+                                <experience-card data-location="data/experience.json" id="fit360"></experience-card>
+                                
+                            </div>
 
 
                         </section>
@@ -134,11 +140,18 @@
 
                                 <div class="pagination-controls bottom"></div>
                             </div>
-                         </section>
-                         <section class="experience__content content-section">
-                            <p class="text-primary">I have experience working with various front-end technologies, including HTML, CSS, JavaScript, and React. I have also worked on several projects that involved building responsive and user-friendly web applications.</p>
-                         </section>
-                         <section class="contactme__content content-section">
+                        </section>
+                        <section class="experience__content content-section">
+                            <div class="experience-list">
+                                <experience-card data-location="data/experience.json" card-colour="--color-base-alt" id="falmouthUni"></experience-card>
+                                <experience-card data-location="data/experience.json" card-colour="--color-base-alt" id="lootGameStudios"></experience-card>
+                                <!-- <experience-card data-location="data/experience.json" card-colour="--color-base-alt" id="noxysGames"></experience-card> -->
+                                <experience-card data-location="data/experience.json" card-colour="--color-base-alt" id="fit360"></experience-card>
+                                <experience-card data-location="data/experience.json" card-colour="--color-base-alt" id="hungrybilly"></experience-card>
+                                
+                            </div>
+                        </section>
+                        <section class="contactme__content content-section">
                             <form action="https://api.web3forms.com/submit" method="POST" class="contact__form">
                                 <input type="hidden" name="access_key" value="a075f074-df06-4d78-971e-61cb4fc2edc7">
                                 
@@ -150,7 +163,7 @@
                                 <textarea name="message" cols="30" rows="20" placeholder="Your Message" required=""></textarea>
                                 <button type="sumbit">Send</button>
                             </form>
-                         </section>
+                        </section>
                     </div>
                 </div>
                 <div class="sidebar panel background-primary">

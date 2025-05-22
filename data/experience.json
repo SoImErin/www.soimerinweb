@@ -1,0 +1,102 @@
+{
+    "empty": {
+        "name": "Job, Type/Location",
+        "description": "Job description",
+        "role": "Role",
+        "fromDate": "---",
+        "toDate": "---",
+        "software": [],
+        "responsibilities": [],
+        "onClick": ""
+    },
+	
+    "falmouthUni": {
+        "name": "Falmouth University, Cornwall, United Kingdom",
+        "description": "Bachelor of Arts - 2:1",
+        "role": "Game Development: Programming",
+        "fromDate": "09/2020",
+        "toDate": "06/2023",
+        "software": [
+            "csharp",
+            "unity"
+        ],
+        "responsibilities": [],
+        "onClick": ""
+    },
+	
+    "lootGameStudios": {
+        "name": "LootGame Studios, Remote, United Kingdom",
+        "description": "A game development studio and co-development studio",
+        "role": "Director/Programmer",
+        "fromDate": "09/2022",
+        "toDate": "04/2025",
+        "software": [
+            "csharp",
+            "unity",
+            "sql",
+            "php"
+        ],
+        "responsibilities": [
+            "<span>Contracts</span> with '<span>50000leagues ltd</span>', '<span>HungryBilly ltd</span>' and '<span>NOXYS GAMES SRL</span>'.",
+			"<span>Developing</span> a unique yet to be announced first-person puzzle/simulator project.",
+			"<span>Worked</span> on 4 projects."
+		],
+        "onClick": ""
+    },
+	
+    "noxysGames": {
+        "name": "NOXYS GAMES SRL, Remote, Romania",
+        "description": "A game development studio and co-development studio",
+        "role": "Programmer",
+        "fromDate": "---",
+        "toDate": "---",
+        "software": [
+            "csharp",
+            "unity",
+            "sql",
+            "php"
+        ],
+        "responsibilities": [],
+        "onClick": ""
+    },
+	
+    "fit360": {
+        "name": "Fit360, Teignmouth, United Kingdom",
+        "description": "Custom Orthotic Design & Make Software Solutions",
+        "role": "Software Developer",
+        "fromDate": "01/2024",
+        "toDate": "08/2024",
+        "software": [
+            "csharp",
+            "xaml",
+            "winforms",
+            "sql"
+        ],
+        "responsibilities": [
+			"Offered overall development support.",
+			"<span>Improved</span> the <span>part nesting algorithm</span> for more efficient material use vs part profile.",
+			"<span>Improved</span> the <span>visual display</span> of the printing preview.",
+			"<span>Developed</span> and <span>Administration Software</span> used by the Tech Support team for handling self-contained Databases and common user errors."
+		],
+        "onClick": ""
+    },
+	
+    "hungrybilly": {
+        "name": "HungryBilly, Remote, United Kingdom",
+        "description": "A co-development studio for games and non-games projects",
+        "role": "Contracted C# Programmer",
+        "fromDate": "11/2021",
+        "toDate": "03/2024",
+        "software": [
+            "csharp",
+            "unity"
+        ],
+        "responsibilities": [
+			"<span>Direct contact</span> with clients.",
+			"<span>Reaching</span> set deadlines.",
+			"<span>Developing</span> of any project to the needs of a given client.",
+			"<span>Worked</span> on 3 projects."
+		],
+        "onClick": ""
+    }
+}
