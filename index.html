@@ -12,8 +12,10 @@
         
         <script src="code/RandomBackground.js" defer></script>
         <script src="code/NavigationButtons.js" defer></script>
-        <script src="code/AnimateLandingMobile.js" defer></script>
+        <script src="code/Mobile/AnimateLandingMobile.js" defer></script>
         <script src="code/ProjectCard.js" defer></script>
+
+        <script src="code/PaginatedProjectList.js" defer></script>
 
         <link rel="icon" href="media/icon.png">
     </head>
@@ -38,10 +40,9 @@
                     <div class="heading_details">
                         <h1 class="heading__name text-primary">So I'm Erin, and I love...</h1>
                         <p class="heading__description text-primary">Producing <span>transformative</span> media✨</p>
-                        <h1 class="heading__subdescription text-primary">With the help of my cat, <a target="_blank" href="https://www.instagram.com/so_imninja/">Ninja</a></h1>
+                        <h1 class="heading__subdescription text-primary">With the help of my cat, <a class="ninja-link" target="_blank" href="https://www.instagram.com/so_imninja/">Ninja</a></h1>
                         <h2 class="heading__title text-primary">Front End Web Developer</h2>
 
-                        
                         <div class="trained-tools__container">
                             <div class="trained-tools__item" tooltip="Unity Engine">
                                 <img src="media/logos/unity-logo.webp" alt="">
@@ -85,58 +86,70 @@
             <div class="contentroot">
                 <div class="content panel background-primary">
                     <div class="content__container">
-                        <!-- <p class="text-primary">test</p> -->
-                         <section class="home__content content-section">
+                        <section class="home__content content-section">
                             <div class="projects-list" style="padding: 20px; background-color: var(--color-base-alt);">
                                 <h1 class="text-primary" style="margin: 0;">Featured Projects</h1>
                                 <project-card data-location="data/projects.json" id="sneezeman"></project-card>
                                 <project-card data-location="data/projects.json" id="detective-badgers"></project-card>
-                                <!-- <li class="project-card panel background-primary">
-                                    <div class="project-card__media">
-                                        <video muted="" loop="" autoplay="" preload="metadata" src="media/projects/detbadg/background.mp4"></video>
-                                    </div>
-                                    <div class="project-card__details">
-                                        <div class="project-card__details__header">
-                                            <h2 class="text-primary">The Adventures of Detective Badgers (2018)</h2>
-                                            <p class="text-primary">Lead Programmer</p>
-                                        </div>
-                                    </div>
-                                </li> -->
+                                
                             </div>
+
+
                         </section>
-                         <section class="aboutme__content content-section">
-                            <p class="text-primary">I am a passionate Front End Web Developer with a love for creating engaging and user-friendly web applications. I have experience in HTML, CSS, JavaScript, and various front-end frameworks. My goal is to make the web a better place, one line of code at a time.</p>
-                         </section>
-                         <section class="projects__content content-section">
-                            <div class="projects-list">
-                                <project-card data-location="data/projects.json" id="sneezeman"></project-card>
-                                <project-card data-location="data/projects.json" id="crash-it-up"></project-card>
-                                <project-card data-location="data/projects.json" id="dio-and-nivis"></project-card>
-                                <project-card data-location="data/projects.json" id="pkt-survivor"></project-card>
-                                <project-card data-location="data/projects.json" id="minesweeper-ai"></project-card>
-                                <project-card data-location="data/projects.json" id="insannatus"></project-card>
-                                <project-card data-location="data/projects.json" id="detective-badgers"></project-card>
-                                <!-- <li class="project-card panel background-primary">
-                                    <div class="project-card__media">
-                                        <video muted="" loop="" autoplay="" preload="metadata" src="media/projects/detbadg/background.mp4"></video>
-                                    </div>
-                                    <div class="project-card__details">
-                                        <div class="project-card__details__header">
-                                            <h2 class="text-primary">The Adventures of Detective Badgers (2018)</h2>
-                                            <p class="text-primary">Lead Programmer</p>
-                                        </div>
-                                    </div>
-                                </li> -->
+                        <section class="aboutme__content content-section">
+                            <p class="text-primary" style="font-size: 1.5rem; margin: 0;">
+                                I'm a passionate <span class="aboutme__highlight-role">Front End Web Developer</span>, <span class="aboutme__highlight-role">Game Developer</span>, 
+                                and <span class="aboutme__highlight-role">Software Engineer</span> focused on crafting engaging, user-friendly digital experiences across platforms.
+                            </p>
+                            <p class="text-primary" style="font-size: 1.5rem;">
+                                I have experience working with <span class="aboutme__highlight-skill">HTML</span>, <span class="aboutme__highlight-skill">CSS</span>, 
+                                <span class="aboutme__highlight-skill">JavaScript</span>, and various front-end frameworks, along with back-end knowledge in 
+                                <span class="aboutme__highlight-skill">PHP</span> and <span class="aboutme__highlight-skill">SQL</span>. I also develop desktop 
+                                applications using <span class="aboutme__highlight-skill">XAML</span> and <span class="aboutme__highlight-skill">WinForms</span>. 
+                                As a gameplay programmer with a background in design, I create clean, efficient, and well-structured code—whether for games, apps, 
+                                or tools—while contributing creative design insights wherever they're needed.
+                            </p>
+                            <p class="text-primary" style="font-size: 1.5rem;">
+                                With the occasional quality assurance check from my cat, <a class="ninja-link" target="_blank" href="https://www.instagram.com/so_imninja/">Ninja</a>, I strive to deliver polished, intuitive, and transformative 
+                                solutions—one line of code at a time.
+                            </p>
+                            <p class="text-primary" style="font-size: 1.5rem; margin: 0;">
+                                "Great design isn't just seen—it's experienced."
+                            </p>
+                        </section>
+                        <section class="projects__content content-section">
+                            <div class="project-pagination">
+                                <div class="pagination-controls top"></div>
+
+                                <div class="paginated-projects-list projects-list">
+                                    <project-card data-location="data/projects.json" card-colour="--color-base-alt" id="sneezeman"></project-card>
+                                    <project-card data-location="data/projects.json" card-colour="--color-base-alt" id="crash-it-up"></project-card>
+                                    <project-card data-location="data/projects.json" card-colour="--color-base-alt" id="dio-and-nivis"></project-card>
+                                    <project-card data-location="data/projects.json" card-colour="--color-base-alt" id="pkt-survivor"></project-card>
+                                    <project-card data-location="data/projects.json" card-colour="--color-base-alt" id="minesweeper-ai"></project-card>
+                                    <project-card data-location="data/projects.json" card-colour="--color-base-alt" id="insannatus"></project-card>
+                                    <project-card data-location="data/projects.json" card-colour="--color-base-alt" id="detective-badgers"></project-card>
+                                    
+                                </div>
+
+                                <div class="pagination-controls bottom"></div>
                             </div>
                          </section>
                          <section class="experience__content content-section">
                             <p class="text-primary">I have experience working with various front-end technologies, including HTML, CSS, JavaScript, and React. I have also worked on several projects that involved building responsive and user-friendly web applications.</p>
                          </section>
-                         <section class="education__content content-section">
-                            <p class="text-primary">I have a degree in Game Development with a Specialism in Programming which I earned studying at Falmouth University. During my studies, I gained a solid foundation in programming, web development, and software engineering principles.</p>
-                         </section>
                          <section class="contactme__content content-section">
-                            <p class="text-primary">If you would like to get in touch with me, please feel free to reach out via email or connect with me on LinkedIn. I am always open to new opportunities and collaborations!</p>
+                            <form action="https://api.web3forms.com/submit" method="POST" class="contact__form">
+                                <input type="hidden" name="access_key" value="a075f074-df06-4d78-971e-61cb4fc2edc7">
+                                
+                                <input type="text" name="full_name" placeholder="Full Name" required="">
+                                <input type="email" name="email" placeholder="Email" required="">
+                                <input type="number" name="phone_number" placeholder="Phone Number" required="">
+                                <input type="text" name="subject" placeholder="Subject" required="">
+
+                                <textarea name="message" cols="30" rows="20" placeholder="Your Message" required=""></textarea>
+                                <button type="sumbit">Send</button>
+                            </form>
                          </section>
                     </div>
                 </div>
@@ -147,7 +160,6 @@
                             <li><button class="background-primary text-primary nav-btn" data-target=".aboutme__content">About me</button></li>
                             <li><button class="background-primary text-primary nav-btn" data-target=".projects__content">Projects <span>(7)</span></button></li>
                             <li><button class="background-primary text-primary nav-btn" data-target=".experience__content">Experience</button></li>
-                            <li><button class="background-primary text-primary nav-btn" data-target=".education__content">Education</button></li>
                             <li><button class="background-primary text-primary nav-btn" data-target=".contactme__content">Contact me</button></li>
                         </ul>
                     </div>

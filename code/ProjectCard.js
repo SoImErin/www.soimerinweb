@@ -7,6 +7,7 @@ class ProjectCard extends HTMLElement {
     async connectedCallback() {
         const projectId = this.getAttribute("id");
         const dataLocation = this.getAttribute("data-location");
+
         if (!projectId) {
             this.shadowRoot.innerHTML = `<p>Error: No project ID provided.</p>`;
             return;
@@ -24,11 +25,12 @@ class ProjectCard extends HTMLElement {
 
             this.render(project);
         } catch (error) {
-            this.shadowRoot.innerHTML = `<p>Error loading project data.</p>`;
+            this.shadowRoot.innerHTML = `<p>Error loading project data.</p><p>${error}</p>`;
         }
     }
 
     render(project) {
+        const inputColourTag = this.getAttribute("card-colour") || "--color-base";
         this.shadowRoot.innerHTML = `
             <style>
                 .project-card {
@@ -176,7 +178,7 @@ class ProjectCard extends HTMLElement {
                 }
 
                 .background-primary {
-                    background-color: var(--color-base) !important;
+                    background-color: var(${inputColourTag}) !important;
                 }
 
                 .text-primary {

@@ -2,25 +2,37 @@ document.addEventListener('DOMContentLoaded', () => {
   const buttons = document.querySelectorAll('.nav-btn');
   const sections = document.querySelectorAll('.content-section');
 
-  // Show default (home)
-  const defaultSection = document.querySelector('.home__content');
-  const defaultButton = document.querySelector('.nav-btn[data-target=".home__content"]');
+  // Load last visited section from localStorage
+  const savedTarget = localStorage.getItem('activeSection');
+  const targetSelector = savedTarget || '.home__content';
+  const targetSection = document.querySelector(targetSelector);
+  const targetButton = document.querySelector(`.nav-btn[data-target="${targetSelector}"]`);
 
-  if (defaultSection) {
-    defaultSection.classList.add('active');
-    defaultSection.style.display = 'block';
+  // Hide all sections first
+  sections.forEach(section => {
+    section.classList.remove('active');
+    section.style.display = 'none';
+  });
+
+  // Show the saved or default section
+  if (targetSection) {
+    targetSection.classList.add('active');
+    targetSection.style.display = 'block';
   }
 
-  if (defaultButton) {
-    defaultButton.classList.add('active-btn');
+  // Highlight the corresponding button
+  buttons.forEach(btn => btn.classList.remove('active-btn'));
+  if (targetButton) {
+    targetButton.classList.add('active-btn');
   }
 
+  // Event listeners for nav buttons
   buttons.forEach(button => {
     button.addEventListener('click', () => {
-      const targetSelector = button.getAttribute('data-target');
-      const targetSection = document.querySelector(targetSelector);
+      const newTarget = button.getAttribute('data-target');
+      const newSection = document.querySelector(newTarget);
 
-      if (!targetSection) return;
+      if (!newSection) return;
 
       // Hide all sections
       sections.forEach(section => {
@@ -33,15 +45,18 @@ document.addEventListener('DOMContentLoaded', () => {
       // Remove active class from all buttons
       buttons.forEach(btn => btn.classList.remove('active-btn'));
 
-      // Show and activate target section
+      // Show and activate new target section
       setTimeout(() => {
-        targetSection.style.display = 'block';
+        newSection.style.display = 'block';
         requestAnimationFrame(() => {
-          targetSection.classList.add('active');
+          newSection.classList.add('active');
         });
 
         // Highlight the clicked button
         button.classList.add('active-btn');
+
+        // Save current section to localStorage
+        localStorage.setItem('activeSection', newTarget);
       }, 300);
     });
   });
