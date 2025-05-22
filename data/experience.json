@@ -17,8 +17,9 @@
         "fromDate": "09/2020",
         "toDate": "06/2023",
         "software": [
+            "unity",
             "csharp",
-            "unity"
+            "github"
         ],
         "responsibilities": [],
         "onClick": ""
@@ -31,10 +32,12 @@
         "fromDate": "09/2022",
         "toDate": "04/2025",
         "software": [
-            "csharp",
             "unity",
+            "csharp",
             "sql",
-            "php"
+            "php",
+            "github",
+            "jira"
         ],
         "responsibilities": [
             "<span>Contracts</span> with '<span>50000leagues ltd</span>', '<span>HungryBilly ltd</span>' and '<span>NOXYS GAMES SRL</span>'.",
@@ -51,10 +54,12 @@
         "fromDate": "---",
         "toDate": "---",
         "software": [
-            "csharp",
             "unity",
+            "csharp",
             "sql",
-            "php"
+            "php",
+            "github",
+            "jira"
         ],
         "responsibilities": [],
         "onClick": ""
@@ -68,9 +73,12 @@
         "toDate": "08/2024",
         "software": [
             "csharp",
+            "dotnet",
             "xaml",
             "winforms",
-            "sql"
+            "sql",
+            "github",
+            "jira"
         ],
         "responsibilities": [
 			"Offered overall development support.",
@@ -88,8 +96,9 @@
         "fromDate": "11/2021",
         "toDate": "03/2024",
         "software": [
+            "unity",
             "csharp",
-            "unity"
+            "github"
         ],
         "responsibilities": [
 			"<span>Direct contact</span> with clients.",

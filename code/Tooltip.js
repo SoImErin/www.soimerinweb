@@ -1,7 +1,7 @@
-document.addEventListener("DOMContentLoaded", () => {
+function bindTooltipEvents(root = document) {
     const tooltip = document.querySelector(".custom-tooltip");
 
-    document.body.addEventListener("mouseover", (e) => {
+    root.addEventListener("mouseover", (e) => {
         const target = e.target.closest("[tooltip]");
         if (!target) return;
 
@@ -29,4 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
         document.addEventListener("mousemove", moveHandler);
         target.addEventListener("mouseleave", leaveHandler);
     });
+}
+
+// Attach to main document
+document.addEventListener("DOMContentLoaded", () => {
+    bindTooltipEvents();
 });
