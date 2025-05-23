@@ -85,8 +85,14 @@ class ExperienceCard extends HTMLElement {
 
         this.shadowRoot.innerHTML = `
             <style>
-                .experience-card__header h1,
-                .experience-card__header p {
+            
+                .experience-card__header {
+                    display: flex; 
+                    justify-content: space-between;
+                }
+
+                .experience-card__text-header h1,
+                .experience-card__text-header p {
                     margin: 0;
                 }
 
@@ -110,6 +116,7 @@ class ExperienceCard extends HTMLElement {
                     display: flex;
                     gap: 8px;
                     align-items: center;
+                    white-space: nowrap;
                 }
 
                 .experience-card ul {
@@ -176,10 +183,62 @@ class ExperienceCard extends HTMLElement {
                     margin: 7.5% 0;
                 }
 
+                .experience-card__header-sep {
+                    border: none;
+                    height: 1px;
+                    background-color: var(--color-text-primary);
+                    margin: 10px 0;
+                }
+
+                
+                @media (max-width: 1300px) {
+
+                    .experience-card__header {
+                        flex-direction: column;
+                        gap: 10px;
+                    }
+
+                    .experience-card__text-header h1 {
+                        font-size: 1rem;
+                    }
+
+                    .experience-card__text-header p {
+                        font-size: .8rem;
+                    }
+
+                    .trained-tools__container {
+                        flex-wrap: wrap;
+                        gap: 0px;
+                    }
+
+                    .trained-tools__item {
+                        width: 20px;
+                        height: 20px;
+                    }
+
+                    .experience-card__details h1 {
+                        font-size: .8rem;
+                    }
+
+                    .experience-card__date svg {
+                        height: .8rem;
+                    }
+
+                    .experience-card__date p {
+                        font-size: .8rem;
+                    }
+
+                    .experience-card ul {
+                        font-size: .8rem;
+                        padding-left: 20px;
+                    }
+
+                }
+
             </style>
             <div class="experience-card panel background-primary">
-                <div style="display: flex; justify-content: space-between;">
-                    <div class="experience-card__header">
+                <div class="experience-card__header">
+                    <div class="experience-card__text-header">
                         <h1 class="text-primary">${exp.name}</h1>
                         <p class="text-primary">${exp.description}</p>
                     </div>
@@ -188,6 +247,7 @@ class ExperienceCard extends HTMLElement {
                         ${toolsToRender}
                     </div>
                 </div>
+                <hr class="experience-card__header-sep">
                 <div class="experience-card__details">
                     <h1 class="text-primary">${exp.role}</h1>
                     <div class="experience-card__date">

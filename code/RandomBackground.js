@@ -1,5 +1,5 @@
   // List your project IDs here
-  const projectIds = ["detbadg", "pktsurvivor"];
+  const projectIds = ["detbadg", "pktsurvivor", "crashitup"];
 
   // Key for sessionStorage
   const storageKey = "selectedBackgroundProject";

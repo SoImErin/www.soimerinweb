@@ -83,10 +83,10 @@ body {
     cursor: pointer;
     background-color: transparent;
     border: none;
-    scale: 100%;
     transition: scale 0.2s ease-in-out;
     height: 20px;
     width: 20px;
+    padding: 0;
     flex-shrink: 0;
 }
 
@@ -96,8 +96,8 @@ body {
 }
 
 .theme-toggle-img {
-    width: 20px;
-    height: 20px;
+    width: 100%;
+    height: 100%;
 }
 
 .darkmode-only {
@@ -201,7 +201,10 @@ a.ninja-link:hover {
 
 .pagination-controls {
     text-align: center;
-    margin: 1rem 0;
+}
+
+.pagination-controls.bottom {
+    margin-top: 1rem;
 }
 
 .pagination-controls button {
@@ -308,8 +311,14 @@ a.ninja-link:hover {
     min-height: 50vh;
 }
 
-.trained-tools__container {
+.skills__container {
     margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.trained-tools__container {
     display: flex;
     gap: 2px;
 }
@@ -536,8 +545,13 @@ a.ninja-link:hover {
 }
 
 
+.aboutme__content p {
+    font-size: 1.5rem;
+}
 
-
+.introduction {
+    font-size: 1.5rem;
+}
 
 
 
@@ -668,6 +682,25 @@ a.ninja-link:hover {
         z-index: 1000;
         position: fixed;
     }
+
+    .skills__container h3 {
+        display: none;
+    }
+
+
+
+
+
+
+    .aboutme__content p {
+        font-size: 1.2rem;
+    }
+
+    .introduction {
+        font-size: 1.2rem;
+    }
+
+
 
 
 
