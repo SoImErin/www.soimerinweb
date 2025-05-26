@@ -7,7 +7,7 @@
 
     --color-navbtn-base: #dadada;
     --color-navbtn-base-hover: #bdbdbd;
-    --color-navbtn-base-disabled: #202024;
+    --color-navbtn-base-disabled: #00000050;
 
     --highlight-color: #42a4ee;
     --highlight-text-color: #f4f4f5;
@@ -22,7 +22,7 @@
 
     --color-navbtn-base: #121214;
     --color-navbtn-base-hover: #202024;
-    --color-navbtn-base-disabled: #404046;
+    --color-navbtn-base-disabled: #00000013;
 
     --highlight-color: #8e4de4;
     --highlight-text-color: #f4f4f5;
@@ -199,6 +199,27 @@ a.ninja-link:hover {
     min-height: 750px;
 }
 
+.paginated-projects-list project-card {
+    opacity: 0;
+    /* transform: translateY(10px); */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.paginated-projects-list project-card.activePage {
+    opacity: 1;
+    /* transform: translateY(0); */
+    visibility: visible;
+    pointer-events: auto;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+
 .pagination-controls {
     text-align: center;
 }
@@ -225,7 +246,9 @@ a.ninja-link:hover {
 }
 
 .pagination-controls button:disabled {
-    visibility: hidden;
+    background-color: var(--color-navbtn-base-disabled);
+    cursor: unset;
+    /* visibility: hidden; */
 }
 
 .pagination-controls button.active {

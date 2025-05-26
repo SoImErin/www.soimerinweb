@@ -190,16 +190,16 @@ class ExperienceCard extends HTMLElement {
                     margin: 10px 0;
                 }
 
+                .experience-card__text-header h1 {
+                    font-size: 1.5rem;
+                }
+
                 
                 @media (max-width: 1300px) {
 
                     .experience-card__header {
                         flex-direction: column;
                         gap: 10px;
-                    }
-
-                    .experience-card__text-header h1 {
-                        font-size: 1rem;
                     }
 
                     .experience-card__text-header p {

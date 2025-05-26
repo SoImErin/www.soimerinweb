@@ -8,7 +8,7 @@
       "developers": "devs",
       "backgroundVideo": "",
       "summary": "The summary goes here",
-      "onClick": ""
+      "links": {}
   },
 
   "crash-it-up": {
@@ -20,7 +20,9 @@
     "developers": "2",
     "backgroundVideo": "media/projects/crash-it-up/background.mp4",
     "summary": "The ultimate mobile racing game where chaos meets strategy! Dive into a high-octane world where your main goals are to collect money, evade the relentless police, and cause as much destruction as possible. With a variety of cars to choose from and exciting rewards to earn, every race is a new adventure.",
-    "onClick": "https://www.kickstarter.com/projects/lootgamestudios/crash-it-up"
+    "links": {
+      "Kickstarter": "https://www.kickstarter.com/projects/lootgamestudios/crash-it-up"
+    }
   },
 
   "sneezeman": {
@@ -32,7 +34,12 @@
       "developers": "4",
       "backgroundVideo": "media/projects/sneezeman/background.mp4",
       "summary": "A fast-paced action platformer where you play as Sneezeman, a sneeze-powered superhero. Blast through sewers, rooftops, the city, jungle, graveyard, and even Mars, using your powerful sneezes to battle a wide variety of enemies. Navigate treacherous terrain, escape the relentless sneezecloud, and rescue Mrs. Sneeze before it's too late!",
-      "onClick": "https://www.50000leagues.com"
+      "links": {
+        "Learn More": "https://www.50000leagues.com",
+        "Steam": "https://store.steampowered.com/app/1692220/Sneezeman_Return_To_Planet_Sneeze/?beta=0",
+        "Google Play": "https://play.google.com/store/apps/details?id=com.PocketSizedHands.Sneezeman",
+        "App Store": "https://apps.apple.com/gb/app/sneezeman-platform-adventure/id1556824628"
+      }
   },
 
   "dio-and-nivis": {
@@ -44,7 +51,9 @@
       "developers": "2",
       "backgroundVideo": "media/projects/dio-and-nivis/background.mp4",
       "summary": "A game revolving around Dio and his connection with the friendly dragon Nivis. Their union is something to behold, fly the skies atop Nivis and explore the land in this 3D explorer game to find all the secrets, meet plenty of NPCs with their own unique personalities and characteristics in this fun and quirky environment.",
-      "onClick": "https://so-imerin.itch.io/dio-and-nivis"
+      "links": {
+        "Download": "https://so-imerin.itch.io/dio-and-nivis"
+      }
   },
 
   "pkt-survivor": {
@@ -56,7 +65,7 @@
       "developers": "3",
       "backgroundVideo": "media/projects/pkt-survivor/background.mp4",
       "summary": "Survive against hundreds of enemies in the wild! This is a fast paced bullet hell with rogue-lite elements, where your choices can allow you to quickly snowball against the many variants of enemies that get thrown at you.",
-      "onClick": ""
+      "links": {}
   },
 
   "minesweeper-ai": {
@@ -68,7 +77,7 @@
       "developers": "1",
       "backgroundVideo": "media/projects/minesweeper-ai/background.mp4",
       "summary": "A classic puzzle game that requires the player to clear a grid of hidden mines without detonating any of them. With the AI solver, the game becomes more interesting as the program follows set rules to determine where the mines are situated throughout this field.",
-      "onClick": ""
+      "links": {}
   },
 
   "insannatus": {
@@ -81,7 +90,9 @@
     "backgroundVideo": "",
     "backgroundImg": "media/projects/insannatus/background.png",
     "summary": "Earth, a home you once knew but no longer familiar, ravaged by a nearby supernova has been thrown back into the dark ages. This event gave some the powerful ability to shapeshift, both a blessing and a curse as they find themselves hunted in this word that has built itself back in the ruins of the old. You are one such shapeshifter, recently captured by those who fear and covet your gift, which you must use to escape capture and help yourself understand and survive this new world.",
-    "onClick": "https://daniel-tyson.itch.io/insannatus"
+    "links": {
+      "Download": "https://insannatus.itch.io/insannatus"
+    }
   },
 
   "detective-badgers": {
@@ -93,6 +104,6 @@
     "developers": "3",
     "backgroundVideo": "media/projects/detective-badgers/background.mp4",
     "summary": "A thrilling mansion murder mystery game based on the popular 'Cluedo'. The game takes place in the 1800s and puts the player in the aftermath of a mansion party gone wrong, the player will have explore and face multiple puzzles to get the truth. Who committed the act, where did it take place, and with what object?",
-    "onClick": ""
+    "links": {}
   }
 }

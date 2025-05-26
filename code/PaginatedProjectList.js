@@ -12,7 +12,11 @@ document.addEventListener('DOMContentLoaded', function () {
         currentPage = page;
 
         projectCards.forEach((card, index) => {
-            card.style.display = (index >= (page - 1) * pageSize && index < page * pageSize) ? 'block' : 'none';
+            if (index >= (page - 1) * pageSize && index < page * pageSize) {
+                card.classList.add('activePage');
+            } else {
+                card.classList.remove('activePage');
+            }
         });
 
         // renderPagination(topControls);

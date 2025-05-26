@@ -24,6 +24,36 @@ class ProjectCard extends HTMLElement {
             }
 
             this.render(project);
+
+            const cardButton = this.shadowRoot.querySelector("button.project-card");
+            const projectCard = this.shadowRoot.querySelector(".project-card");
+            const moreInfo = this.shadowRoot.querySelector(".project-card__moreInfo");
+
+            if (cardButton && projectCard && moreInfo) {
+                cardButton.addEventListener("click", () => {
+                    const isExpanded = projectCard.classList.contains("expanded");
+
+                    if (isExpanded) {
+                        // Collapse: hide overflow immediately, then remove class
+                        moreInfo.style.overflow = "hidden";
+                        projectCard.classList.remove("expanded");
+                    } else {
+                        // Expand: add class, then wait for transition to end
+                        projectCard.classList.add("expanded");
+
+                        const onTransitionEnd = (e) => {
+                            if (e.target === moreInfo && e.propertyName === "max-height") {
+                                moreInfo.style.overflow = "unset";
+                                moreInfo.removeEventListener("transitionend", onTransitionEnd);
+                            }
+                        };
+
+                        // Reset overflow so the transition works again
+                        moreInfo.style.overflow = "hidden";
+                        moreInfo.addEventListener("transitionend", onTransitionEnd);
+                    }
+                });
+            }
         } catch (error) {
             this.shadowRoot.innerHTML = `<p>Error loading project data.</p><p>${error}</p>`;
         }
@@ -31,6 +61,42 @@ class ProjectCard extends HTMLElement {
 
     render(project) {
         const inputColourTag = this.getAttribute("card-colour") || "--color-base";
+
+        const totalLinks = Object.entries(project.links).length;
+        const linksToAdd = Object.entries(project.links).map(([name, url], i, arr) => {
+            let style = "";
+
+            function widthCalc(itemsInRow) {
+                const gapPx = 20;
+                return `calc((100% - ${(itemsInRow - 1) * gapPx}px) / ${itemsInRow})`;
+            }
+
+            if (totalLinks <= 4) {
+                // All links get same width
+                style = `min-width: ${widthCalc(totalLinks)}; max-width: ${widthCalc(totalLinks)};`;
+            } else {
+                if (i < 4) {
+                style = `min-width: ${widthCalc(4)}; max-width: ${widthCalc(4)};`;
+                } else {
+                const leftover = totalLinks - 4;
+                if (leftover === 1) {
+                    style = `min-width: ${widthCalc(1)}; max-width: ${widthCalc(1)};`;
+                } else if (leftover === 2) {
+                    style = `min-width: ${widthCalc(2)}; max-width: ${widthCalc(2)};`;
+                } else {
+                    style = `min-width: ${widthCalc(3)}; max-width: ${widthCalc(3)};`;
+                }
+                }
+            }
+
+            return `
+                <a href="${url}" class="text-primary" target="_blank" style="${style}">
+                ${name}
+                </a>
+            `;
+        }).join("");
+
+
         this.shadowRoot.innerHTML = `
             <style>
                 .project-card {
@@ -44,14 +110,16 @@ class ProjectCard extends HTMLElement {
                     width: 100%;
                     height: 100%;
                     transition: all .3s ease;
+                    flex-direction: column;
                 }
 
-                .project-card section {
-                    width: 100%
+                .project-card__section {
+                    width: 100%;
+                    align-items: center;
                 }
 
                 .project-card h3 {
-                    font-size: 1.5rem;
+                    font-size: 1.4rem;
                     margin-block-start: 1rem;
                     margin-block-end: 1rem;
                     margin-inline-start: 0px;
@@ -116,6 +184,7 @@ class ProjectCard extends HTMLElement {
 
                 .svg-inline--fa {
                     height: 1em;
+                    transition: all 0.3s ease;
                 }
 
                 .clickable-card-header {
@@ -142,6 +211,18 @@ class ProjectCard extends HTMLElement {
                     transform: scale(1.01);
                 }
 
+                .project-card.expanded:hover {
+                    box-shadow: none;
+                    transition: all .3s ease;
+                    transform: scale(1);
+                }
+
+                .project-card.expanded .project-card__moreInfo-buttons a:hover {
+                    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+                    transition: all .3s ease;
+                    transform: scale(1.1);
+                }
+
                 .project-card:hover .project-card__media video,
                 .project-card:hover .project-card__media img {
                     filter: grayscale(0);
@@ -152,13 +233,12 @@ class ProjectCard extends HTMLElement {
                     transition: all 0.1s ease;
                 }
 
-                ${project.onClick ?
-                    `
-                    .project-card {
-                        cursor: pointer;
-                    }
-                    ` :
-                    ``
+                .project-card {
+                    cursor: pointer;
+                }
+
+                .project-card.expanded {
+                    cursor: unset;
                 }
 
                 .project-card__content {
@@ -166,6 +246,7 @@ class ProjectCard extends HTMLElement {
                     flex-direction: column;
                     justify-content: space-between;
                     flex-grow: 1;
+                    width: 100%;
                 }
 
                 .project-card__section {
@@ -200,7 +281,57 @@ class ProjectCard extends HTMLElement {
                     background-color: var(--color-text-primary);
                     margin: 10px 0;
                 }
+
+                .project-card__moreInfo h1,
+                .project-card__moreInfo p {
+                    margin-bottom: 0;
+                }
+
+                .project-card__moreInfo-sep {
+                    margin: 20px 0px;
+                }
+
+                .project-card__moreInfo-buttons {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 20px;
+                }
+
+                .project-card__moreInfo-buttons a {
+                    padding: 10px 0px;
+                    background-color: var(--highlight-color);
+                    color: var(--highlight-text-color);
+                    text-decoration: none;
+                    border-radius: 10px;
+                    transition: all .3s ease;
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .project-card__moreInfo {
+                    max-height: 0px;
+                    overflow: hidden;
+                    transition: all 0.3s ease;
+                }
+
+                .project-card.expanded .project-card__moreInfo {
+                    max-height: 500px;
+                    overflow: unset;
+                    transition: all 0.3s ease;
+                }
                 
+                .project-card.expanded .clickable-card-header .svg-inline--fa {
+                    transform: rotate(180deg);
+                    transition: all 0.3s ease;
+                }
+
+                ${!project.links || Object.keys(project.links).length === 0 ? `
+                    .project-card__moreInfo-sep {
+                        display: none;
+                    }
+                ` : ''}
+
                 @media (max-width: 1300px) {
                     .project-card__section {
                         flex-direction: column;
@@ -218,8 +349,12 @@ class ProjectCard extends HTMLElement {
                         font-size: 1rem !important;
                     }
 
+                    .clickable-card-header {
+                        font-size: .75rem !important;
+                    }
+
                     .clickable-card-header small {
-                        font-size: .9rem;
+                        font-size: .7rem;
                     }
 
                     .video-additional-info {
@@ -237,11 +372,19 @@ class ProjectCard extends HTMLElement {
                         font-size: .8rem;
                     }
 
+                    .project-card__moreInfo p {
+                        font-size: .65rem;
+                    }
+
+                    .project-card__moreInfo-buttons {
+                        flex-wrap: wrap;
+                    }
+
                 }
 
             </style>
             <h1 class="mobile-temp-text text-primary">Project Card - '${project.name}' is unavailable, mobile version coming soon.</h1>
-            <button class="project-card panel background-primary" ${project.onClick ? `onclick="window.open('${project.onClick}', '_blank')"` : ``}>
+            <button class="project-card panel background-primary"}>
                 <section class="project-card__section">
                     <div class="project-card__media">
                         ${project.backgroundVideo ? 
@@ -252,10 +395,9 @@ class ProjectCard extends HTMLElement {
                     <div class="project-card__content">
                         <h3 class="clickable-card-header">
                             ${project.name}
-                            ${project.onClick ?
-                                `<svg class="svg-inline--fa fa-chevron-right clickable-header-icon" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-v-7eb23141=""><path class="" fill="currentColor" d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z"></path></svg>` :
-                                ``
-                            }
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="svg-inline--fa clickable-header-icon bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                            </svg>
                             <small class="text-primary">${project.role}</small>
                         </h3>
                         <hr class="project-card__header-sep">
@@ -277,6 +419,14 @@ class ProjectCard extends HTMLElement {
                                 <p class="text-primary">${project.date}</p>
                             </div>
                         </div>
+                    </div>
+                </section>
+                <section class="project-card__moreInfo">
+                    <h1 class="text-primary">Summary:</h1>
+                    <p class="text-primary">${project.summary}</p>
+                    <hr class="project-card__moreInfo-sep">
+                    <div class="project-card__moreInfo-buttons">
+                            ${linksToAdd}
                     </div>
                 </section>
             </button>

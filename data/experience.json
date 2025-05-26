@@ -25,6 +25,17 @@
         "onClick": ""
     },
 	
+    "sdc": {
+        "name": "South Devon College, Devon, United Kingdom",
+        "description": "BTEC - Level 3 Extended Diploma",
+        "role": "Creative Media Production",
+        "fromDate": "---",
+        "toDate": "---",
+        "software": [],
+        "responsibilities": [],
+        "onClick": ""
+    },
+	
     "lootGameStudios": {
         "name": "LootGame Studios, Remote, United Kingdom",
         "description": "A game development studio and co-development studio",
