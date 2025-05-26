@@ -236,10 +236,6 @@ class ProjectCard extends HTMLElement {
                     cursor: pointer;
                 }
 
-                .project-card.expanded {
-                    cursor: unset;
-                }
-
                 .project-card__content {
                     display: flex;
                     flex-direction: column;
