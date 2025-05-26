@@ -65,35 +65,34 @@ class ProjectCard extends HTMLElement {
         const totalLinks = Object.entries(project.links).length;
         const linksToAdd = Object.entries(project.links).map(([name, url], i, arr) => {
             let style = "";
-
-            function widthCalc(itemsInRow) {
-                const gapPx = 20;
-                return `calc((100% - ${(itemsInRow - 1) * gapPx}px) / ${itemsInRow})`;
+            
+            function widthClass(itemsInRow) {
+                return `width-${itemsInRow}`;
             }
 
             if (totalLinks <= 4) {
-                // All links get same width
-                style = `min-width: ${widthCalc(totalLinks)}; max-width: ${widthCalc(totalLinks)};`;
+                style = widthClass(totalLinks);
             } else {
                 if (i < 4) {
-                style = `min-width: ${widthCalc(4)}; max-width: ${widthCalc(4)};`;
+                    style = widthClass(4);
                 } else {
-                const leftover = totalLinks - 4;
-                if (leftover === 1) {
-                    style = `min-width: ${widthCalc(1)}; max-width: ${widthCalc(1)};`;
-                } else if (leftover === 2) {
-                    style = `min-width: ${widthCalc(2)}; max-width: ${widthCalc(2)};`;
-                } else {
-                    style = `min-width: ${widthCalc(3)}; max-width: ${widthCalc(3)};`;
-                }
+                    const leftover = totalLinks - 4;
+                    if (leftover === 1) {
+                        style = widthClass(1);
+                    } else if (leftover === 2) {
+                        style = widthClass(2);
+                    } else {
+                        style = widthClass(3);
+                    }
                 }
             }
 
             return `
-                <a href="${url}" class="text-primary" target="_blank" style="${style}">
-                ${name}
+                <a href="${url}" class="text-primary ${style}" target="_blank">
+                    ${name}
                 </a>
             `;
+
         }).join("");
 
 
@@ -331,6 +330,28 @@ class ProjectCard extends HTMLElement {
                         display: none;
                     }
                 ` : ''}
+
+                /* Default widths (desktop/tablet) */
+                .project-card__moreInfo-buttons a.width-1 {
+                    width: 100%;
+                }
+                .project-card__moreInfo-buttons a.width-2 {
+                    width: calc((100% - 20px) / 2);
+                }
+                .project-card__moreInfo-buttons a.width-3 {
+                    width: calc((100% - 40px) / 3);
+                }
+                .project-card__moreInfo-buttons a.width-4 {
+                    width: calc((100% - 60px) / 4);
+                }
+
+                /* Force max 2 items per row on small screens */
+                @media (max-width: 600px) {
+                    .project-card__moreInfo-buttons a.width-3,
+                    .project-card__moreInfo-buttons a.width-4 {
+                        width: calc((100% - 20px) / 2);
+                    }
+                }
 
                 @media (max-width: 1300px) {
                     .project-card__section {
